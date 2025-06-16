@@ -1,0 +1,46 @@
+# Bytecode e cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Arquivos de configuração do VSCode
+.vscode/
+
+# Arquivos temporários e de log
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Arquivos de dependências compiladas (opcional)
+*.so
+*.dll
+*.dylib
+
+# Arquivos de ambiente
+.env
+.env.*
+
+# Arquivos gerados por pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Configurações específicas do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Arquivos de pacotes e distribuição (caso venha a publicar o pacote)
+dist/
+build/
+*.egg-info/
+
+# SQLite local (caso use em dev)
+*.sqlite3
