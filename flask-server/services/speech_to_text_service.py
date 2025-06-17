@@ -18,7 +18,7 @@ def transcribe_audio_google(filepath: str, language="pt-BR") -> dict:
     try:
         response = client.recognize(config=config, audio=audio)
         transcript = " ".join([result.alternatives[0].transcript for result in response.results])
-
+        print("Transcript:", transcript)
         return {"text": transcript}
     except Exception as e:
         return {

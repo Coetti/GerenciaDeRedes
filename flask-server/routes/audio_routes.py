@@ -3,7 +3,8 @@ from services.audio_service import process_audio_upload
 from services.speech_to_text_service import transcribe_audio_google
 from services.dialogflow_service import detect_intent_text  # novo
 import os
-from services.calculator_service import calculate_expression
+from services.calculator_service import calculator_service
+from services.weather_service import fetch_current_weather
 
 audio_bp = Blueprint("audio", __name__)
 
@@ -89,11 +90,8 @@ def upload_and_transcribe_intent_gcloud():
         if "error" in dialogflow_response:
             return jsonify(dialogflow_response), dialogflow_response.get("status", 500)
         
-        if dialogflow_response["intent"] == "soma":
-            number1 = float(dialogflow_response["parameters"]["number1"])
-            number2 = float(dialogflow_response["parameters"]["number2"])
-            result = calculate_expression("+", number1, number2)
-
+        result = fetch_current_weather(dialogflow_response) if dialogflow_response["intent"] == "weather" else calculator_service(dialogflow_response)
+        print("result->", result)    
         return jsonify({
             "message": "Success",
             "transcription": transcribed_text,
