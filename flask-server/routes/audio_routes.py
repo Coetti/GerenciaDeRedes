@@ -91,7 +91,7 @@ def upload_and_transcribe_intent_gcloud():
             return jsonify(dialogflow_response), dialogflow_response.get("status", 500)
         
         result = fetch_current_weather(dialogflow_response) if dialogflow_response["intent"] == "weather" else calculator_service(dialogflow_response)
-        print("result->", result)    
+       
         return jsonify({
             "message": "Success",
             "transcription": transcribed_text,

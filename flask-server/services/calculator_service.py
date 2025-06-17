@@ -17,7 +17,6 @@ def calculate_expression(operator: str, number1: float, number2: float) -> str:
 
 
 def calculator_service(dialogflow_response) -> str:
-   print(dialogflow_response)
    try:
       if dialogflow_response["intent"] == "add":
          number1 = float(dialogflow_response["parameters"]["number1"])
