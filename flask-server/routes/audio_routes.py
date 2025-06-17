@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from services.audio_service import process_audio_upload
-from services.speech_service import transcribe_audio_google
+from services.speech_to_text_service import transcribe_audio_google
 
 audio_bp = Blueprint("audio", __name__)
 

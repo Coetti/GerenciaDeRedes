@@ -44,3 +44,6 @@ build/
 
 # SQLite local (caso use em dev)
 *.sqlite3
+
+# Credenciais API Google Cloud
+*.json
