@@ -2,6 +2,14 @@ import os
 import requests
 from utils.get_city_location_key import get_city_location_key
 from utils.map_weather_api_response import map_weather_api_response
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+API_KEY = os.getenv("ACCUWEATHER_API_KEY")
+BASE_URL = "http://dataservice.accuweather.com"
+
 
 def fetch_current_weather(dialogflow_response):
     locationKey = ""
@@ -27,9 +35,6 @@ def fetch_current_weather(dialogflow_response):
         return {
                 "city": dialogflow_response["parameters"]["city"],
                 "weather": current_weather }
-
-API_KEY = "TjbaDwToaC88wn6RxMKvv3OlZ0tRLzIA"
-BASE_URL = "http://dataservice.accuweather.com"
 
 def get_daily_forecast(locationKey: str) -> dict:
     url = f"{BASE_URL}/forecasts/v1/daily/1day/{locationKey}"

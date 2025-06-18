@@ -2,7 +2,7 @@ from google.cloud import dialogflow_v2 as dialogflow
 from services.gcloud_clients import get_dialogflow_client
 import uuid
 
-PROJECT_ID = "gerenciaderedes-463118"  # ajuste aqui
+PROJECT_ID = "gerenciaderedes-463118"
 
 def detect_intent_text(text: str, language_code="pt-BR") -> dict:
     client = get_dialogflow_client()

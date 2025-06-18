@@ -11,7 +11,7 @@ def transcribe_audio_google(filepath: str, language="pt-BR") -> dict:
 
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=16000,  # Ajustar conforme o áudio real
+        sample_rate_hertz=16000, 
         language_code=language,
     )
 
