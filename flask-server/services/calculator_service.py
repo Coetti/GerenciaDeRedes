@@ -33,7 +33,6 @@ def calculator_service(dialogflow_response) -> str:
       elif dialogflow_response["intent"] == "div":
          number1 = float(dialogflow_response["parameters"]["number1"])
          number2 = float(dialogflow_response["parameters"]["number2"])
-         print("number1:", number1, "number2:", number2)
          if number1 == 0 or number2 == 0:
             result = "Nao eh possivel dividir por zero"
             return result
