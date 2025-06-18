@@ -85,13 +85,19 @@ def upload_and_transcribe_intent_gcloud():
 
         transcribed_text = transcription_result["text"]
 
+        try:
+            print(f"Excluindo o arquivo: {filepath}")
+            os.remove(filepath)
+        except Exception as e:
+            print(f"Erro ao excluir o arquivo: {str(e)}")
+
         dialogflow_response = detect_intent_text(transcribed_text)
 
         if "error" in dialogflow_response:
             return jsonify(dialogflow_response), dialogflow_response.get("status", 500)
         
         result = fetch_current_weather(dialogflow_response) if dialogflow_response["intent"] == "weather" else calculator_service(dialogflow_response)
-       
+        print("result->", result)
         return jsonify({
             "message": "Success",
             "transcription": transcribed_text,
@@ -100,10 +106,5 @@ def upload_and_transcribe_intent_gcloud():
             "response_text": dialogflow_response["response_text"],
             "result": result
         })
-
-    finally:
-        try:
-            print(f"Excluindo o arquivo: {filepath}")
-            os.remove(filepath)
-        except Exception as e:
-            print(f"Erro ao excluir o arquivo: {str(e)}")
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

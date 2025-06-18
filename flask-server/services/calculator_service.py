@@ -26,16 +26,17 @@ def calculator_service(dialogflow_response) -> str:
          number1 = float(dialogflow_response["parameters"]["number1"])
          number2 = float(dialogflow_response["parameters"]["number2"])
          result = calculate_expression("-", number1, number2)    
-      elif dialogflow_response["intent"] == "mult":
+      elif dialogflow_response["intent"] == "mul":
          number1 = float(dialogflow_response["parameters"]["number1"])
          number2 = float(dialogflow_response["parameters"]["number2"])
          result = calculate_expression("*", number1, number2)
       elif dialogflow_response["intent"] == "div":
          number1 = float(dialogflow_response["parameters"]["number1"])
          number2 = float(dialogflow_response["parameters"]["number2"])
+         print("number1:", number1, "number2:", number2)
          if number1 == 0 or number2 == 0:
             result = "Nao eh possivel dividir por zero"
-            return
+            return result
          result = calculate_expression("/", number1, number2)
       else:
          result = "Operacao nao suportada."

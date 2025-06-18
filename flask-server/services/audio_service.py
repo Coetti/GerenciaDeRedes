@@ -26,11 +26,18 @@ def process_audio_upload(file: FileStorage) -> dict:
         # converte se não for .wav
         if ext != ".wav":
             try:
+                print("Original path:", original_path)
                 converted_path = convert_to_wav(original_path)
+                try:
+                    print(f"Excluindo o arquivo: {original_path}")
+                    os.remove(original_path)
+                except Exception as e:
+                    print(f"Erro ao excluir o arquivo: {str(e)}")
                 return {
                     "message": "File received and converted",
                     "path": converted_path
                 }
+           
             except Exception as e:
                 return {
                     "error": f"Erro ao converter para WAV: {str(e)}",
