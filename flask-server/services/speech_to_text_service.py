@@ -1,8 +1,9 @@
 import io
 from google.cloud import speech
+from services.gcloud_clients import get_speech_client
 
 def transcribe_audio_google(filepath: str, language="pt-BR") -> dict:
-    client = speech.SpeechClient()
+    client = get_speech_client()
 
     with io.open(filepath, "rb") as audio_file:
         content = audio_file.read()

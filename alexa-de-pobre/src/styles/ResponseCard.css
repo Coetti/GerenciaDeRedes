@@ -1,0 +1,63 @@
+.response-card-container {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.6);
+  padding: 0.4rem;
+}
+
+.response-card-icon-container {
+  display: flex;
+  width: 15%;
+  height: 100%;
+  border-right: 2px solid dodgerblue;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.response-card-icon-container img {
+  width: 60px;
+  height: 60px;
+}
+
+.question-answer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.question {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  border-bottom: 2px solid dodgerblue;
+}
+
+.question-text {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 0.3rem;
+  color: dodgerblue;
+}
+
+.answer {
+  display: flex;
+  width: 100%;
+  height: 70%;
+  box-sizing: border-box;
+}
+
+.answer-text {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 0.3rem;
+  text-align: start;
+}
