@@ -28,6 +28,13 @@ ENV/
 .env
 .env.*
 
+
+# Arquivos temporários de áudio
+
+*.webm
+*.wav
+*.ogg
+
 # Arquivos gerados por pip
 pip-log.txt
 pip-delete-this-directory.txt

@@ -56,7 +56,7 @@ def handle_audio_transcription(request):
 def handle_audio_intent(request):
     if "file" not in request.files:
         return jsonify({"error": "No file part"}), 400
-
+    print("request.files:", request.files)
     file = request.files["file"]
     if file.filename == "":
         return jsonify({"error": "No selected file"}), 400

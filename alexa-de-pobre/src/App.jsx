@@ -13,18 +13,12 @@ function App() {
     formData.append("file", audioBlob, "gravacao.webm");
 
     try {
-      const response = await api.post(
-        "/upload-and-transcribe-intent",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log("Resposta da API:", response.data);
+      const response = await api.post("/upload-audio", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       const mappedResponse = mapResponse(response.data);
-      console.log("Resposta mapeada:", mappedResponse);
       setQuestions((prevQuestions) => [...prevQuestions, mappedResponse]);
     } catch (error) {
       console.error("Erro no envio do áudio:", error);

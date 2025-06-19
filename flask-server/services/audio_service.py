@@ -10,7 +10,8 @@ ALLOWED_EXTENSIONS = [".webm", ".wav", ".ogg"]
 
 def process_audio_upload(file: FileStorage) -> dict:
     ext = os.path.splitext(file.filename)[1].lower()
-
+    print("filename:", file.filename)
+    
     if ext not in ALLOWED_EXTENSIONS:
         return {
             "error": "Unsupported file type",
@@ -30,7 +31,7 @@ def process_audio_upload(file: FileStorage) -> dict:
                 converted_path = convert_to_wav(original_path)
                 try:
                     print(f"Excluindo o arquivo: {original_path}")
-                    os.remove(original_path)
+                    #os.remove(original_path)
                 except Exception as e:
                     print(f"Erro ao excluir o arquivo: {str(e)}")
                 return {
