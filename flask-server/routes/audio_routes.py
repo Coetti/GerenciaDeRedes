@@ -18,3 +18,7 @@ def upload_and_transcribe_gcloud():
 @audio_bp.route("/upload-and-transcribe-intent", methods=["POST"])
 def upload_and_transcribe_intent_gcloud():
     return handle_audio_intent(request)
+
+@audio_bp.route("/hello", methods=["GET"])
+def hello():
+    return jsonify({"message": "Hello, World!"})
