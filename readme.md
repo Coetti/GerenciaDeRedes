@@ -18,7 +18,7 @@ Este projeto demonstra uma implementação básica de um sistema na arquitetura 
 
 ### Objetivo
 
-O trabalho visou introduzir os alunos do 6° do curso de Ciência da Computação - PUCMINAS Campus Poços de Caldas dessa arquitetura popular nos sistemas modernos, onde podemos ter diversos serviços isolados, mas que se comunicam através de APIs REST e protocolo HTTP/HTTPS para cooperarem por um objetivo comum. Nosso projeto foi uma tentativa de reproduzir uma versão mínima do kit de processamento de linguagem natural, inspirado no dispositivo 'Alexa', para que através de uma interface web simples, o usuário possa se comunicar por áudio, realizando uma pergunta (e.g. perguntar o clima de sua cidade), e receber uma resposta gráfica. Devido ao curto prazo de tempo para desenvolvimento, o sistema implementa uma versão muito reduzida de funcionalidades, que estão listadas abaixo.
+O trabalho visou introduzir os alunos do 6° período do curso de Ciência da Computação - PUCMINAS Campus Poços de Caldas dessa arquitetura popular nos sistemas modernos, onde podemos ter diversos serviços isolados, mas que se comunicam através de APIs REST e protocolo HTTP/HTTPS para cooperarem por um objetivo comum. Nosso projeto foi uma tentativa de reproduzir uma versão mínima do kit de processamento de linguagem natural, inspirado no dispositivo 'Alexa', para que através de uma interface web simples, o usuário possa se comunicar por áudio, realizando uma pergunta (e.g. perguntar o clima de sua cidade), e receber uma resposta gráfica. Devido ao curto prazo de tempo para desenvolvimento, o sistema implementa uma versão muito reduzida de funcionalidades, que estão listadas abaixo.
 
 - **Calcular a SOMA de dois números.**
 
