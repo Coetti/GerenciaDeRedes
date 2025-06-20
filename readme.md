@@ -181,8 +181,8 @@ node src/server.js
 #### Configuração
 
 - Porta padrão: O servidor roda na porta `3000`. Este valor está definido na variável `PORT` dentro do arquivo `src/server.js`.
-- Variáveis de ambiente necessárias: Atualmente, este serviço não requer varíaveis de de ambiente (`.env).
- - `DATABASE_URL`: O endereço para o qual o áudio é encaminhado está definido na variável `destinationUrl` dentro do arquivo `src/server.js`.
+- Variáveis de ambiente necessárias: Atualmente, este serviço não requer varíaveis de de ambiente (`.env`).
+- `DATABASE_URL`: O endereço para o qual o áudio é encaminhado está definido na variável `destinationUrl` dentro do arquivo `src/server.js`.
 
   
 
